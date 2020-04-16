@@ -1,2 +1,4 @@
 rootProject.name='BaiWei4Application'
 include ':app'
+include ':commonlib'
+include ':home'
