@@ -62,4 +62,5 @@ dependencies {
     implementation project(path: ':commonlib')
 
     annotationProcessor libs.aroutercompiler
+    implementation project(path: ':core')
 }

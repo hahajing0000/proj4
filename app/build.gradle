@@ -46,6 +46,7 @@ dependencies {
     annotationProcessor libs.aroutercompiler
 
     implementation project(path: ':commonlib')
+    implementation project(path: ':core')
 
     if (isNeedHomeMoudle.toBoolean()){
         implementation project(path: ':home')
