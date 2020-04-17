@@ -1,6 +1,7 @@
 package com.zy.core.mvp.ui;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.zy.core.mvp.BasePresenter;
 import com.zy.core.mvp.IView;
@@ -52,6 +53,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
      * 初始化事件
      */
     protected abstract void initEvent();
+
+    protected void showMsg(String msg){
+        Toast.makeText(BaseActivity.this,msg,Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected void onDestroy() {

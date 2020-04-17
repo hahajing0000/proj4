@@ -25,7 +25,9 @@ ext{
             rxjava:"2.2.5",
             okhttplog:"3.5.0",
             glide: "4.9.0",
-            disklru:"2.0.2"
+            disklru:"2.0.2",
+            autodisposearchcomponents:"1.0.0-RC3",
+            autodispose:"1.0.0-RC3"
     ]
 
     //依赖
@@ -42,6 +44,8 @@ ext{
             rxandroid:"io.reactivex.rxjava2:rxandroid:$dependenciesVersion.rxandroid",
             rxjava:"io.reactivex.rxjava2:rxjava:$dependenciesVersion.rxjava",
 
+            autodisposearchcomponents:"com.uber.autodispose:autodispose-android-archcomponents:$dependenciesVersion.autodisposearchcomponents",
+            autodispose:"com.uber.autodispose:autodispose-android:$dependenciesVersion.autodispose",
             glide:"com.github.bumptech.glide:glide:$dependenciesVersion.glide",
             disklru:"com.jakewharton:disklrucache:$dependenciesVersion.disklru"
     ]

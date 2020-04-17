@@ -1,10 +1,8 @@
-package com.zy.home.service.repository;
+package com.zy.home.net.repository;
 
-import com.zy.core.mvp.IModel;
-import com.zy.core.mvp.Repository;
 import com.zy.home.callback.IResultCallback;
 import com.zy.home.contract.HomeContract;
-import com.zy.home.service.model.HomeModel;
+import com.zy.home.net.service.HomeService;
 
 /**
  * @author:zhangyue
@@ -14,7 +12,7 @@ public class HomeRepository extends HomeContract.HomeRepository {
 
     @Override
     protected void createModel() {
-        mModel= new HomeModel();
+        mModel= new HomeService();
     }
 
     @Override

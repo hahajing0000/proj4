@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserCenterActivity"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="2"
+            android:text="电话号码:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <EditText
+            android:id="@+id/et_user_phone"
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="2"
+            android:text="密码:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <EditText
+            android:id="@+id/et_user_pwd"
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="2"
+            android:text="再次输入:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <EditText
+            android:id="@+id/et_user_pwd2"
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_user_register"
+            android:text="提交"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </LinearLayout>
+</LinearLayout>

@@ -1,6 +1,5 @@
-package com.zy.home.service.model;
+package com.zy.home.net.service;
 
-import com.zy.core.mvp.IModel;
 import com.zy.home.callback.IResultCallback;
 import com.zy.home.contract.HomeContract;
 
@@ -8,7 +7,7 @@ import com.zy.home.contract.HomeContract;
  * @author:zhangyue
  * @date:2020/4/16
  */
-public class HomeModel implements HomeContract.HomeModel {
+public class HomeService implements HomeContract.HomeModel {
     @Override
     public void destory() {
 

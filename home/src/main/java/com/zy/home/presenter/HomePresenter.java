@@ -2,9 +2,7 @@ package com.zy.home.presenter;
 
 import com.zy.home.callback.IResultCallback;
 import com.zy.home.contract.HomeContract;
-import com.zy.home.service.repository.HomeRepository;
-
-import java.lang.ref.WeakReference;
+import com.zy.home.net.repository.HomeRepository;
 
 /**
  * @author:zhangyue
