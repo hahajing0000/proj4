@@ -70,4 +70,5 @@ dependencies {
     implementation project(path: ':base_net')
     implementation project(path: ':base_core')
     implementation project(path: ':base_imageloader')
+    implementation project(path: ':base_storage')
 }

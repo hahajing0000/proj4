@@ -1,10 +1,12 @@
 package com.zy.usercenter.model.protocol.resp;
 
+import java.io.Serializable;
+
 /**
  * @author:zhangyue
  * @date:2020/4/17
  */
-public class UserEntity {
+public class UserEntity implements Serializable {
     /**
      * 出生日期
      */

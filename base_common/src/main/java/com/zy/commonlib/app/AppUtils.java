@@ -2,6 +2,7 @@ package com.zy.commonlib.app;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 
 /**
  * @author:zhangyue
@@ -22,5 +23,39 @@ public class AppUtils {
         catch (Exception ex){
             return false;
         }
+    }
+
+    private static Context mContext;
+
+    /**
+     * 设置全局上下文
+     * @param _context
+     */
+    public static void setContext(Context _context){
+        mContext=_context;
+    }
+
+    /**
+     * 获取Application Context
+     * @return
+     */
+    public static Context getAppContext(){
+        return mContext;
+    }
+
+    /**
+     * 获取AppVersionCode
+     * @param context
+     * @return
+     */
+    public static int getAppVersionCode(Context context){
+        try{
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return packageInfo.versionCode;
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return 1;
     }
 }

@@ -23,6 +23,10 @@ public class MyApplication extends Application {
 
         //初始化图片加载框架策略
         ImageLoader.getInstance().initStrategy(new GlideStrategy());
+        /**
+         * 设置Common中的全局上下文
+         */
+        AppUtils.setContext(this);
     }
 
 

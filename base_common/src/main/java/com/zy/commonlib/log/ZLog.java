@@ -9,11 +9,15 @@ public class ZLog {
     //是否Debug模式
     private static boolean isDebug=true;
 
+    static {
+        mLog=new ZLogNormalImpl();
+    }
+
     /**
      * 构造中初始化默认的ZLog
      */
     private ZLog(){
-        mLog=new ZLogNormalImpl();
+
     }
 
     /**
@@ -35,7 +39,7 @@ public class ZLog {
     //Debug
     public static void d(String msg){
         if(isDebug) {
-            d(msg);
+            mLog.d(msg);
         }
     }
     public static void d(String tag,String msg){

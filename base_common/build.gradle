@@ -50,6 +50,7 @@ dependencies {
     api libs.okhttplog
 
     api libs.glide
+    api libs.disklru
 
     api 'com.alibaba:fastjson:1.1.70.android'
     api 'com.alibaba:fastjson:1.2.55'
