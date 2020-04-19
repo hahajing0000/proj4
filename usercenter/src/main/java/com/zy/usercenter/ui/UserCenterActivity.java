@@ -48,7 +48,7 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
 
     @Override
     protected void initData() {
-        ImageLoader.getInstance().initStrategy(new GlideStrategy());
+
         ImageLoader.getInstance().loadImage(this,NormalImageSetting.builder().url("http://imgsa.baidu.com/exp/w=500/sign=9de34c5481b1cb133e693c13ed5556da/bba1cd11728b47101059da77cfcec3fdfc032312.jpg").imageRadius(150).imageView(ivTest).build());
     }
 

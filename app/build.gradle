@@ -47,7 +47,7 @@ dependencies {
 
     implementation project(path: ':base_common')
     implementation project(path: ':base_core')
-
+    implementation project(path: ':base_imageloader')
 
 
     if (isNeedHomeMoudle.toBoolean()){
