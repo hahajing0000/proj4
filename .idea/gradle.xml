@@ -11,10 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/commonlib" />
-            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/base_common" />
+            <option value="$PROJECT_DIR$/base_core" />
+            <option value="$PROJECT_DIR$/base_imageloader" />
+            <option value="$PROJECT_DIR$/base_net" />
+            <option value="$PROJECT_DIR$/base_storage" />
             <option value="$PROJECT_DIR$/home" />
-            <option value="$PROJECT_DIR$/net" />
             <option value="$PROJECT_DIR$/usercenter" />
           </set>
         </option>

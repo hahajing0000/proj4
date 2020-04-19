@@ -1,11 +1,6 @@
-if (isNeedHomeMoudle.toBoolean()) {
-    apply plugin: 'com.android.library'
-} else {
-    apply plugin: 'com.android.application'
-}
+apply plugin: 'com.android.library'
 def appInfo=rootProject.ext.android
 def libs=rootProject.ext.dependencies
-
 android {
     compileSdkVersion appInfo.compileSdkVersion
     buildToolsVersion appInfo.buildToolsVersion
@@ -15,7 +10,6 @@ android {
         targetSdkVersion appInfo.targetSdkVersion
         versionCode appInfo.versionCode
         versionName appInfo.versionName
-
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -28,24 +22,10 @@ android {
         }
     }
 
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    //配置资源前缀
-    resourcePrefix "home_"
-
-    sourceSets {
-        main {
-            if (isNeedHomeMoudle.toBoolean()) {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            }
         }
     }
 
@@ -55,13 +35,22 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation libs.appcompat
-    implementation libs.constraintlayout
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation project(path: ':base_common')
+    api libs.arouter
 
-    annotationProcessor libs.aroutercompiler
-    implementation project(path: ':base_core')
+    api libs.retrofit
+    api libs.retrofitgson
+    api libs.retrofitrxjava
+    api libs.gson
+    api libs.rxandroid
+    api libs.rxjava
+    api libs.okhttplog
+
+    api libs.glide
+
+    api 'com.alibaba:fastjson:1.1.70.android'
+    api 'com.alibaba:fastjson:1.2.55'
 }

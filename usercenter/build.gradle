@@ -66,7 +66,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     annotationProcessor libs.aroutercompiler
-    implementation project(path: ':commonlib')
-    implementation project(path: ':net')
-    implementation project(path: ':core')
+    implementation project(path: ':base_common')
+    implementation project(path: ':base_net')
+    implementation project(path: ':base_core')
+    implementation project(path: ':base_imageloader')
 }

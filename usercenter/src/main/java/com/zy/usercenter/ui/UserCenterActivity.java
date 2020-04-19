@@ -8,8 +8,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.zy.core.mvp.ui.BaseActivity;
+import com.zy.imageloader.ImageLoader;
+import com.zy.imageloader.impl.GlideStrategy;
+import com.zy.imageloader.setting.NormalImageSetting;
 import com.zy.usercenter.R;
 import com.zy.usercenter.contract.UserCenterContract;
 import com.zy.usercenter.model.protocol.resp.UserEntity;
@@ -21,6 +25,7 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
     private EditText etUserPwd;
     private EditText etUserPwd2;
     private Button btnUserRegister;
+    private ImageView ivTest;
 
     @Override
     protected void createProsenter() {
@@ -38,11 +43,13 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
         etUserPwd = (EditText) findViewById(R.id.et_user_pwd);
         etUserPwd2 = (EditText) findViewById(R.id.et_user_pwd2);
         btnUserRegister = (Button) findViewById(R.id.btn_user_register);
+        ivTest = (ImageView) findViewById(R.id.iv_test);
     }
 
     @Override
     protected void initData() {
-
+        ImageLoader.getInstance().initStrategy(new GlideStrategy());
+        ImageLoader.getInstance().loadImage(this,NormalImageSetting.builder().url("http://imgsa.baidu.com/exp/w=500/sign=9de34c5481b1cb133e693c13ed5556da/bba1cd11728b47101059da77cfcec3fdfc032312.jpg").imageRadius(150).imageView(ivTest).build());
     }
 
     @Override
