@@ -5,7 +5,6 @@ import com.zy.usercenter.contract.UserCenterContract;
 import com.zy.usercenter.model.api.UserApi;
 import com.zy.usercenter.model.protocol.resp.UserEntity;
 
-import io.reactivex.Flowable;
 import io.reactivex.Observable;
 
 /**

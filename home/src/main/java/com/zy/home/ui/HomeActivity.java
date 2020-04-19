@@ -1,6 +1,7 @@
 package com.zy.home.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleOwner;
 
 import android.os.Bundle;
 import android.view.View;
@@ -53,5 +54,10 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeCon
     @Override
     public void setValue(String requestResult) {
         tvContent.setText(requestResult);
+    }
+
+    @Override
+    public LifecycleOwner getOwner() {
+        return this;
     }
 }

@@ -6,6 +6,7 @@ import com.zy.commonlib.log.ZLog;
 import com.zy.net.api.TokenApi;
 import com.zy.net.common.Config;
 import com.zy.net.protocol.resp.TokenRespEntity;
+import com.zy.net.retrofit.converter.FastJsonConvertFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +19,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @author:zhangyue
@@ -43,7 +43,8 @@ public class RetrofitFactory {
                 .baseUrl(Config.SERVER_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 //.addCallAdapterFactory(LiveDataCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(FastJsonConvertFactory.create())
                 .client(createOkHttpClient())
                 .build();
 

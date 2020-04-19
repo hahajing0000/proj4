@@ -1,4 +1,4 @@
-package com.zy.net.retrofit;
+package com.zy.net.retrofit.calladapter;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;

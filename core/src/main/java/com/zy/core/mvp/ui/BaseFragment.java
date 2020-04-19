@@ -30,7 +30,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected abstract void initEvent();
 
-    @SuppressWarnings("ConstantConditions")
+    /**
+     * Fragment获取资源id方法
+     * @param viewId
+     * @param <T>
+     * @return
+     */
     protected <T extends View> T $(@IdRes int viewId) {
         return this.getView().findViewById(viewId);
     }
@@ -40,6 +45,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(setLayout(), null);
         createPresenter();
+
         return view;
     }
 
