@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 //引入变量
 def appInfo=rootProject.ext.android
 def libs=rootProject.ext.dependencies
@@ -48,7 +49,6 @@ dependencies {
     implementation project(path: ':base_common')
     implementation project(path: ':base_core')
     implementation project(path: ':base_imageloader')
-
 
     if (isNeedHomeMoudle.toBoolean()){
         implementation project(path: ':home')

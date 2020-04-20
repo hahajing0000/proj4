@@ -1,10 +1,10 @@
 package com.zy.usercenter.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LifecycleOwner;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,16 +13,20 @@ import android.widget.ImageView;
 import com.zy.commonlib.log.ZLog;
 import com.zy.core.mvp.ui.BaseActivity;
 import com.zy.imageloader.ImageLoader;
-import com.zy.imageloader.impl.GlideStrategy;
 import com.zy.imageloader.setting.NormalImageSetting;
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 import com.zy.storage.chain.StorageChainManager;
+import com.zy.storage.greendao.ManagerFactory;
+import com.zy.storage.greendao.entity.TestEntity;
 import com.zy.usercenter.R;
 import com.zy.usercenter.contract.UserCenterContract;
+import com.zy.usercenter.model.protocol.resp.TestUserEntity;
 import com.zy.usercenter.model.protocol.resp.UserEntity;
 import com.zy.usercenter.model.storage.Test1StorageChain;
 import com.zy.usercenter.model.storage.TestStorageChain;
 import com.zy.usercenter.presenter.UserCenterPresenter;
+
+import java.util.List;
 
 public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implements UserCenterContract.UserCenterView {
 
@@ -102,6 +106,19 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
         btnUserRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                TestEntity testEntity=new TestEntity();
+                testEntity.setId(1L);
+                ManagerFactory.getInstance().getTestManager().saveOrUpdate(testEntity);
+
+                List<TestEntity> testEntities = ManagerFactory.getInstance().getTestManager().queryAll();
+                if (null!=testEntities){
+                    for (TestEntity test:
+                         testEntities) {
+                        Log.d("123", "onClick: "+test.getId());
+                    }
+                }
+
                 String phone=etUserPhone.getText().toString();
                 String pwd=etUserPwd.getText().toString();
                 String pwd2=etUserPwd2.getText().toString();
@@ -121,10 +138,15 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
                     showMsg("两次密码输入不一致");
                     return;
                 }
-                UserEntity userEntity=new UserEntity();
-                userEntity.setPhoneNum(Integer.parseInt(phone));
-                userEntity.setUserPassWord(pwd);
-                mPresenter.register(userEntity);
+//                UserEntity userEntity=new UserEntity();
+//                userEntity.setPhoneNum(Integer.parseInt(phone));
+//                userEntity.setUserPassWord(pwd);
+//                mPresenter.register(userEntity);
+
+                TestUserEntity entity=new TestUserEntity();
+                entity.setUsername(phone);
+                entity.setPwd(pwd);
+                mPresenter.register2(entity);
 
             }
         });

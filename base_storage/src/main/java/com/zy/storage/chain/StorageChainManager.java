@@ -1,6 +1,6 @@
 package com.zy.storage.chain;
 
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 
 import java.util.concurrent.ConcurrentHashMap;
 

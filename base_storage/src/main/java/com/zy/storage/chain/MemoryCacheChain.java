@@ -1,8 +1,6 @@
 package com.zy.storage.chain;
 
-import android.util.LruCache;
-
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 import com.zy.storage.common.ZLRUCache;
 
 /**

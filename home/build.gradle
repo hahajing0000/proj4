@@ -3,6 +3,7 @@ if (isNeedHomeMoudle.toBoolean()) {
 } else {
     apply plugin: 'com.android.application'
 }
+
 def appInfo=rootProject.ext.android
 def libs=rootProject.ext.dependencies
 

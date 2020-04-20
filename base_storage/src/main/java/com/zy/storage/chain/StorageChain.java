@@ -1,8 +1,6 @@
 package com.zy.storage.chain;
 
-import android.graphics.Bitmap;
-
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 
 /**
  * @author:zhangyue

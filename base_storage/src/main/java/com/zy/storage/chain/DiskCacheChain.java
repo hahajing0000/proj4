@@ -1,24 +1,7 @@
 package com.zy.storage.chain;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.os.Environment;
-
-import com.jakewharton.disklrucache.DiskLruCache;
-import com.zy.commonlib.ObjUtils;
-import com.zy.commonlib.app.AppUtils;
-import com.zy.commonlib.encrypt.MD5;
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 import com.zy.storage.common.ZDiskLRUCache;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author:zhangyue

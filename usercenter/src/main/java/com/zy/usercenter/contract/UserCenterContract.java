@@ -4,6 +4,8 @@ import com.zy.core.mvp.BasePresenter;
 import com.zy.core.mvp.IModel;
 import com.zy.core.mvp.IView;
 import com.zy.core.mvp.Repository;
+import com.zy.usercenter.model.protocol.resp.BaseResp;
+import com.zy.usercenter.model.protocol.resp.TestUserEntity;
 import com.zy.usercenter.model.protocol.resp.UserEntity;
 
 import io.reactivex.Flowable;
@@ -28,10 +30,13 @@ public interface UserCenterContract {
 
     interface UserCenterModel extends IModel{
         Observable<UserEntity> register(UserEntity userEntity);
+
+        Observable<BaseResp<TestUserEntity>> register2(TestUserEntity testUserEntity);
     }
 
     abstract class UserCenterRepository extends Repository<UserCenterModel>{
        public abstract Observable<UserEntity> register(UserEntity userEntity);
+       public abstract Observable<BaseResp<TestUserEntity>> register2(TestUserEntity testUserEntity);
     }
 
     abstract class UserCenterPresenter extends BasePresenter<UserCenterRepository,UserCenterView>{
@@ -41,6 +46,7 @@ public interface UserCenterContract {
         }
 
         public abstract void register(UserEntity userEntity);
+        public abstract void register2(TestUserEntity testUserEntity);
     }
 
 }

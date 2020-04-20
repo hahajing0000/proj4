@@ -1,14 +1,20 @@
 apply plugin: 'com.android.library'
+//GreenDao
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+
+def appInfo=rootProject.ext.android
+def libs=rootProject.ext.dependencies
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion appInfo.compileSdkVersion
+    buildToolsVersion appInfo.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion appInfo.minSdkVersion
+        targetSdkVersion appInfo.targetSdkVersion
+        versionCode appInfo.versionCode
+        versionName appInfo.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -21,6 +27,15 @@ android {
         }
     }
 
+//    greenDao{
+//        //指定数据库schema版本号，迁移等操作会用到;
+//        schemaVersion 1
+//        //dao的包名，包名默认是entity所在的包；
+//        daoPackage 'com.zy.entity'
+//        //生成数据库文件的目录;
+//        targetGenDir 'src/main/java'
+//    }
+
 }
 
 dependencies {
@@ -30,5 +45,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
     implementation project(path: ':base_common')
+
+    implementation libs.gDao
+
 }

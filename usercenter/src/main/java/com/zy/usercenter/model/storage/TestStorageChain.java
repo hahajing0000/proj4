@@ -1,7 +1,7 @@
 package com.zy.usercenter.model.storage;
 
 import com.zy.commonlib.log.ZLog;
-import com.zy.storage.ResultCallback;
+import com.zy.storage.callback.ResultCallback;
 import com.zy.storage.chain.StorageChain;
 
 /**

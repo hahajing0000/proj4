@@ -7,7 +7,6 @@ import com.jakewharton.disklrucache.DiskLruCache;
 import com.zy.commonlib.ObjUtils;
 import com.zy.commonlib.app.AppUtils;
 import com.zy.commonlib.encrypt.MD5;
-import com.zy.storage.ResultCallback;
 
 import java.io.File;
 import java.io.IOException;

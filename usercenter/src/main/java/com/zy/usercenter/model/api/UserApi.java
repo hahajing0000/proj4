@@ -1,5 +1,7 @@
 package com.zy.usercenter.model.api;
 
+import com.zy.usercenter.model.protocol.resp.BaseResp;
+import com.zy.usercenter.model.protocol.resp.TestUserEntity;
 import com.zy.usercenter.model.protocol.resp.UserEntity;
 
 import io.reactivex.Flowable;
@@ -16,4 +18,7 @@ public interface UserApi {
 
     @POST("videouser/register")
     Observable<UserEntity> register(@Body UserEntity userEntity);
+
+    @POST("api/User/register")
+    Observable<BaseResp<TestUserEntity>> register2(@Body TestUserEntity testUserEntity);
 }
