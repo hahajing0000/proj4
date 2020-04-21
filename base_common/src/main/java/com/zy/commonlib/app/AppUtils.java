@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 
+import com.zy.commonlib.BuildConfig;
+
 /**
  * @author:zhangyue
  * @date:2020/4/16
@@ -57,5 +59,13 @@ public class AppUtils {
             ex.printStackTrace();
         }
         return 1;
+    }
+
+    /**
+     * 获取是否debug模式
+     * @return
+     */
+    public static boolean getDebugMode(){
+        return BuildConfig.isDebug;
     }
 }

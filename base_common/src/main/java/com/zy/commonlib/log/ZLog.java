@@ -1,5 +1,7 @@
 package com.zy.commonlib.log;
 
+import com.zy.commonlib.app.AppUtils;
+
 /**
  * @author:zhangyue
  * @date:2020/4/16
@@ -7,7 +9,7 @@ package com.zy.commonlib.log;
 public class ZLog {
     private static IZLog mLog;
     //是否Debug模式
-    private static boolean isDebug=true;
+    private static boolean isDebug= AppUtils.getDebugMode();
 
     static {
         mLog=new ZLogNormalImpl();

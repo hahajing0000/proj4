@@ -24,8 +24,15 @@ android {
 
     buildTypes {
         release {
+            //通过BuildConfig关闭log
+            buildConfigField "boolean","isDebug","false"
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            //通过BuildConfig开启log
+            buildConfigField "boolean","isDebug","true"
         }
     }
 

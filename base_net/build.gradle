@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 def appInfo=rootProject.ext.android
 def libs=rootProject.ext.dependencies
+def urls=rootProject.ext.url
 android {
     compileSdkVersion appInfo.compileSdkVersion
     buildToolsVersion appInfo.buildToolsVersion
@@ -19,6 +20,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String","baseUrl","\""+urls.release+"\"")
+        }
+        debug{
+            buildConfigField("String","baseUrl","\""+urls.debug+"\"")
         }
     }
 
