@@ -73,4 +73,5 @@ dependencies {
     implementation project(path: ':base_core')
     implementation project(path: ':base_imageloader')
     implementation project(path: ':base_storage')
+    implementation project(path: ':base_widget')
 }
